@@ -1,0 +1,112 @@
+Table media {
+  id int [primary key]
+  user_id int 
+  data varchar
+  type varchar
+}
+
+Table post_media {
+  media_id int 
+  post_id int
+}
+
+Table comment_media {
+  media_id int 
+  comment_id int
+}
+
+Table hashtag {
+  id int [pk]
+  hashtag varchar
+}
+
+Table post_hashtag {
+  
+  post_id int 
+  hashtag_id int 
+}
+
+Table user{
+  id int [primary key]
+  name varchar
+  hobby varchar
+  town varchar
+  status varchar
+}
+
+Table post{
+  id int [pk]
+  user_id int
+  describe varchar
+  data datetime
+}
+
+Table comment{
+  id int [pk]
+  user_id int 
+  text varchar
+}
+
+Table like{
+  id int [pk]
+  user_id int 
+  post_id int 
+}
+
+Table repost {
+  id int [pk]
+  user_id int 
+  post_id int 
+}
+
+Table message {
+  id int [pk]
+  user_id int 
+  text varchar
+  is_viewed boolean 
+}
+
+Table relationships{
+  id int [pk]
+  user_id int 
+  target_user_id int
+  relation_type varchar
+}
+
+
+
+
+
+
+Ref: "post"."id" < "like"."post_id"
+
+Ref: "post"."id" < "repost"."post_id"
+
+Ref: "like"."user_id" < "user"."id"
+
+Ref: "repost"."user_id" < "user"."id"
+
+Ref: "post_media"."media_id" < "media"."id"
+
+Ref: "post"."id" < "post_media"."post_id"
+
+Ref: "user"."id" < "message"."user_id"
+
+Ref: "comment"."user_id" < "user"."id"
+
+Ref: "comment_media"."media_id" < "media"."id"
+
+Ref: "comment"."id" < "comment_media"."comment_id"
+
+
+
+
+Ref: "post_hashtag"."post_id" < "post"."id"
+
+Ref: "hashtag"."id" < "post_hashtag"."hashtag_id"
+
+Ref: "media"."user_id" < "user"."id"
+
+Ref: "post"."user_id" < "user"."id"
+
+Ref: "relationships"."user_id" < "user"."id"
