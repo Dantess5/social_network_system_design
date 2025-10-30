@@ -33,5 +33,17 @@ RPS (write post)  = 47000000 * 1 / (24*60*60) ~ 550 r/s
 RPS (write message)  = 47000000 * 5 / (24*60*60) ~ 3000 r/s
 
 Traffic per second write for message = 4000 * 2 * 3000 * 1024 = 24 000  000  000 = 24 гб/с
-Traffic per day write for message = 4000 * 2 * 3000 * 1024 * 86400 ~ 2 000 000 гб/с = 2000 тб/день
-Traffic per year write for message = 4000 * 2 * 3000 * 1024 * 86400 ~  730 000 тб/день
+Traffic per day write for message = 4000 * 2 * 3000 * 1024 * 86400 ~ 2 000 000 гб/с = 2000 тб
+Traffic per year write for message = 4000 * 2 * 3000 * 1024 * 86400 ~  730 000 тб
+Traffic per 5 years write for message = 4000 * 2 * 3000 * 1024 * 86400 ~ 3 650 000 тб
+
+Traffic per second write for post = 4000 * 2 * 550 * 2048 = 9 000 000 000 = 9 гб/с
+Traffic per day write for post = 4000 * 2 * 550 * 2048 * 86400 ~ 2 000 000 гб/с = 700 тб
+Traffic per year write for post  ~  300 000 тб
+Traffic per 5 years write for post ~ 1 500 000 тб
+Сумма за 5 лет = 5 200 000 тб без реплики
+С репликой за 5 лет = 10 400 000 тб
+
+Количество дисков = 650 000 дисков
+
+
